@@ -53,9 +53,9 @@
 #define NFSRAMFS_TFTP_CMD		""
 
 #if defined(CONFIG_CMD_NET)
-#define S32CC_IPADDR			"10.0.0.100"
+#define S32CC_IPADDR			"192.168.0.101"
 #define S32CC_NETMASK			"255.255.255.0"
-#define S32CC_SERVERIP			"10.0.0.1"
+#define S32CC_SERVERIP			"192.168.0.2"
 #else
 #define S32CC_IPADDR			""
 #define S32CC_NETMASK			""
@@ -169,6 +169,8 @@
 	"serverip=" S32CC_SERVERIP "\0" \
 	SERDES_EXTRA_ENV_SETTINGS \
 	XEN_EXTRA_ENV_SETTINGS \
+	"ethact=eth0\0"
+	
 
 #if defined(CONFIG_TARGET_TYPE_S32CC_EMULATOR)
 #  define BOOTCOMMAND "${boot_mtd} ${loadaddr} - ${fdt_addr}"
